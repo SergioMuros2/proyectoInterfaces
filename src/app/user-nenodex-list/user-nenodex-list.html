@@ -1,0 +1,30 @@
+<div class="user-nenomons-list">
+  <h3>Mis Nenomons</h3>
+  <div class="user-nenomon-grid">
+    <div class="empty-message" *ngIf="userNenomons.length === 0">
+      <p>No tienes Nenomons aún</p>
+      <p>¡Añade algunos de la lista disponible!</p>
+    </div>
+
+    <div class="user-nenomon-card" *ngFor="let nenomon of userNenomons">
+      <div class="user-nenomon-sprite">
+        {{ nenomon.name.charAt(0) }}
+      </div>
+      <div class="user-nenomon-details">
+        <h4>{{ nenomon.name }}</h4>
+        <span class="type-badge {{ nenomon.type.toLowerCase() }}">{{ nenomon.type }}</span>
+
+        <div class="user-nenomon-stats">
+          <div class="stat">Nivel: {{ nenomon.level || 1 }}</div>
+          <div class="stat">HP: {{ nenomon.hp || 100 }}</div>
+        </div>
+
+        <div class="attacks">
+          <span class="attack" *ngFor="let attack of nenomon.attacks || ['Ataque Básico']">
+            {{ attack }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

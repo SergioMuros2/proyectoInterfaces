@@ -1,0 +1,41 @@
+<div class="nenodex-container">
+  <!-- Cabecera de la Nenodex -->
+  <div class="nenodex-header">
+    <h1 class="nenodex-title">NENODEX</h1>
+    <div class="nenodex-lights">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+  </div>
+
+  <!-- Área principal - Solo slots para otros componentes -->
+  <div class="nenodex-body">
+    <!-- Slot para la pantalla principal -->
+    <div class="screen-section">
+      <div class="main-screen">
+        <div class="screen-border">
+          <div class="screen-content">
+            <ng-content select="[main-screen]"></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slot para la lista -->
+    <div class="list-section">
+  <div class="list-container">
+    <ng-content select="[list-section]"></ng-content>
+  </div>
+</div>
+
+  <!-- Slot para controles (será otro componente) -->
+  <div class="controls-section">
+    <ng-content select="[controls-section]"></ng-content>
+  </div>
+
+  <!-- Pie de la Nenodex -->
+  <div class="nenodex-footer">
+    <div class="brand">DIGITAL MONSTER DEVICE</div>
+  </div>
+</div>

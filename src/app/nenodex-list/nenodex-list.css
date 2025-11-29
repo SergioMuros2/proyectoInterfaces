@@ -1,0 +1,101 @@
+.nenodex-list {
+  padding: 8px;
+  height: 100%;
+}
+
+.nenodex-list h3 {
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 10px;
+  text-shadow: 2px 2px 0 #000;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 6px;
+}
+
+.nenomon-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+
+.nenomon-card {
+  background: #d3d3d3;
+  border: 3px solid #000;
+  border-radius: 0;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  image-rendering: pixelated;
+}
+
+.nenomon-card:hover {
+  background: #b0b0b0;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.nenomon-sprite {
+  width: 48px;
+  height: 48px;
+  background: #808080;
+  border: 2px solid #000;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.pixel-sprite {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  object-fit: contain; /* Cambié de 'cover' a 'contain' para PNG */
+}
+
+.nenomon-info {
+  flex: 1;
+}
+
+.nenomon-info h4 {
+  margin: 0 0 6px 0;
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.type-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.type-badge {
+  padding: 3px 6px;
+  border-radius: 0;
+  font-size: 7px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  border: 1px solid #000;
+  text-shadow: 1px 1px 0 #000;
+  white-space: nowrap;
+}
+
+.type-badge.planta {
+  background: #32cd32;
+  box-shadow: inset 2px 2px 0 #008000;
+}
+
+.type-badge.veneno {
+  background: #8a2be2;
+  box-shadow: inset 2px 2px 0 #4b0082;
+}
