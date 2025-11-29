@@ -99,3 +99,8 @@
   background: #8a2be2;
   box-shadow: inset 2px 2px 0 #4b0082;
 }
+ .nenomon-card.selected {
+  border: 3px solid yellow;
+  box-shadow: 0 0 10px yellow;
+  transform: scale(1.05);
+}

@@ -1,0 +1,42 @@
+<div class="nenodex-list">
+  <h3>NENOMONS DISPONIBLES</h3>
+
+  <div class="controls">
+    <button (click)="subir()">⬆ Subir</button>
+    <button (click)="bajar()">⬇ Bajar</button>
+  </div>
+
+  <div class="nenomon-grid">
+    <div
+      class="nenomon-card"
+      *ngFor="let nenomon of nenomons; let i = index"
+      [class.selected]="i === selectedIndex">
+
+      <div class="nenomon-sprite">
+        <img [src]="'assets/images/' + nenomon.sprite"
+             [alt]="nenomon.name"
+             class="pixel-sprite">
+      </div>
+
+      <div class="nenomon-info">
+        <h4>{{ nenomon.name }}</h4>
+
+        <div class="type-badges">
+          <span *ngIf="!nenomon.type.includes('/')"
+                class="type-badge planta">
+            {{ nenomon.type }}
+          </span>
+
+          <ng-container *ngIf="nenomon.type.includes('/')">
+            <span class="type-badge planta">
+              {{ nenomon.type.split('/')[0] }}
+            </span>
+            <span class="type-badge veneno">
+              {{ nenomon.type.split('/')[1] }}
+            </span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

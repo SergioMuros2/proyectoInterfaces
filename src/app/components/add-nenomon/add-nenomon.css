@@ -1,0 +1,15 @@
+.add-button {
+  background-color: #FFD700; /* Amarillo dorado */
+  color: #000; /* Texto negro para contraste */
+  font-size: 1.2rem; /* Más grande */
+  padding: 10px 20px; /* Más gordito */
+  border: none;
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-button:hover {
+  transform: scale(1.05); /* Efecto de agrandarse al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

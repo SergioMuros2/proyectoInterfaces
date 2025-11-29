@@ -1,0 +1,14 @@
+/* tslint:disable:no-unused-variable */
+import { TestBed, inject } from '@angular/core/testing';
+import { AutenticacionService } from './autenticacion.service';
+describe('Service: Autenticacion', () => {
+ beforeEach(() => {
+ TestBed.configureTestingModule({
+ providers: [AutenticacionService]
+ });
+ });
+ it('should ...', inject([AutenticacionService], (service:
+AutenticacionService) => {
+ expect(service).toBeTruthy();
+ }));
+});

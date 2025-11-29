@@ -1,0 +1,255 @@
+/* ==========================
+   Contenedor principal
+========================== */
+.user-nenomons-list {
+  padding: 12px;
+  height: 100%;
+  background-color: #f4f4f4; /* fondo extendido */
+  overflow-y: auto;           /* scroll si hay muchos nenomons */
+}
+
+/* ==========================
+   Título
+========================== */
+.user-nenomons-list h3 {
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  text-shadow: 2px 2px 0 #fff;
+  border-bottom: 3px solid #000;
+  padding-bottom: 8px;
+}
+
+/* ==========================
+   Grid de tarjetas
+========================== */
+.user-nenomon-grid {
+  display: flex;
+  flex-wrap: wrap;        /* Permite varias filas */
+  gap: 10px;              /* Separación entre tarjetas */
+  justify-content: flex-start;
+}
+
+/* ==========================
+   Mensaje vacío
+========================== */
+.empty-message {
+  text-align: center;
+  color: #696969;
+  padding: 30px 20px;
+  background: #d3d3d3;
+  border-radius: 0;
+  border: 3px dashed #000;
+  font-size: 12px;
+}
+
+.empty-message p {
+  margin: 8px 0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* ==========================
+   Tarjeta de usuario
+========================== */
+.user-nenomon-card {
+  width: 100px;           /* Igual que NenodexList */
+  height: 120px;          /* Ajusta según tu diseño */
+  border: 4px solid #000;
+  border-radius: 0;
+  padding: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 4px 4px 0 #666;
+}
+
+/* ==========================
+   Sprite del nenomon
+========================== */
+.user-nenomon-sprite {
+  width: 64px;           /* Igual que NenodexList */
+  height: 64px;
+  background: #a9a9a9;
+  border: 3px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Press Start 2P', cursive;
+  image-rendering: pixelated;
+}
+
+.user-nenomon-sprite img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* ==========================
+   Detalles del nenomon
+========================== */
+.user-nenomon-details {
+  flex: 1;
+  width: 100%;
+}
+
+.user-nenomon-details h4 {
+  margin: 2px 0;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #fff;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+/* ==========================
+   Stats
+========================== */
+.user-nenomon-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.stat {
+  background: #2f4f4f;
+  color: white;
+  padding: 4px 6px;
+  border-radius: 0;
+  font-size: 8px;
+  text-align: center;
+  border: 1px solid #000;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* ==========================
+   Ataques
+========================== */
+.attacks {
+  margin-top: 6px;
+  border-top: 2px solid #000;
+  padding-top: 4px;
+}
+
+.attack {
+  background: #dc143c;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 0;
+  font-size: 7px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  display: inline-block;
+  border: 1px solid #000;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* ==========================
+   Tipo de nenomon
+========================== */
+.type-badge {
+  padding: 4px 8px;
+  border-radius: 0;
+  font-size: 8px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  border: 1px solid #000;
+  text-shadow: 1px 1px 0 #000;
+  margin-bottom: 6px;
+}
+
+.type-badge.fuego {
+  background: #ff4500;
+  box-shadow: inset 2px 2px 0 #ff0000;
+}
+
+.type-badge.agua {
+  background: #1e90ff;
+  box-shadow: inset 2px 2px 0 #0000ff;
+}
+
+.type-badge.planta {
+  background: #32cd32;
+  box-shadow: inset 2px 2px 0 #008000;
+}
+
+.type-badge.veneno {
+  background: #8a2be2;
+  box-shadow: inset 2px 2px 0 #4b0082;
+}
+
+/* ==========================
+   Botón añadir (gordito y amarillo)
+========================== */
+.add-nenomon-btn {
+  background-color: #ffeb3b;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #fff;
+  transition: transform 0.1s;
+}
+
+.add-nenomon-btn:hover {
+  transform: scale(1.05);
+}
+.user-nenomons-list {
+  padding: 12px;
+  min-height: 500px; /* Aumenta el alto inicial del fondo */
+  background-color: #f0f0f0; /* Fondo de la sección */
+  border: 3px solid #000;
+  border-radius: 0;
+  overflow-y: auto; /* Scroll si hay demasiados Nenomons */
+}
+
+.user-nenomon-grid {
+  display: flex;
+  flex-direction: column; /* Las tarjetas apiladas verticalmente */
+  gap: 12px;
+  width: 100%;
+}
+
+/* Mantener tarjetas del mismo tamaño que antes */
+.user-nenomon-card {
+  width: 100px;      /* Igual que NenodexList */
+  height: 120px;     /* Ajusta según tu diseño */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.user-nenomon-card.selected {
+  border: 3px solid gold; /* Resalta el seleccionado */
+  background-color: #fffacd; /* Amarillo claro */
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.controls  {
+  padding: 6px 12px;
+  font-weight: bold;
+  background-color: greenyellow;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
