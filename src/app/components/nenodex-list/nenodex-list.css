@@ -1,6 +1,9 @@
 .nenodex-list {
   padding: 8px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .nenodex-list h3 {
@@ -11,16 +14,81 @@
   text-shadow: 2px 2px 0 #000;
   border-bottom: 2px solid #fff;
   padding-bottom: 6px;
+  flex-shrink: 0;
 }
 
+/* CONTROLES FIJO EN LA PARTE SUPERIOR */
+.controls-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  justify-content: center;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  background: #2f4f4f; /* Mismo color que el fondo */
+  padding: 8px;
+  border: 2px solid #000;
+  z-index: 10; /* Por encima del contenido */
+}
+
+.controls-container button {
+  background: #3498db;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 8px 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  cursor: pointer;
+  image-rendering: pixelated;
+  min-width: 80px;
+}
+
+.controls-container button:hover {
+  background: #2980b9;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.controls-container button:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* ÁREA DE SCROLL (SOLO LAS TARJETAS) */
 .nenomon-grid {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: calc(100% - 30px);
+  flex: 1;
   overflow-y: auto;
+  min-height: 0;
+  padding: 2px;
 }
 
+/* Personalizar la barra de scroll */
+.nenomon-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nenomon-grid::-webkit-scrollbar-track {
+  background: #2c3e50;
+  border: 1px solid #000;
+}
+
+.nenomon-grid::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border: 1px solid #000;
+}
+
+.nenomon-grid::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+/* ==========================
+   TARJETAS INDIVIDUALES
+========================== */
 .nenomon-card {
   background: #d3d3d3;
   border: 3px solid #000;
@@ -32,12 +100,19 @@
   align-items: center;
   gap: 8px;
   image-rendering: pixelated;
+  flex-shrink: 0;         /* No se comprimen */
 }
 
 .nenomon-card:hover {
   background: #b0b0b0;
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 #000;
+}
+
+.nenomon-card.selected {
+  background: #ffff99;
+  border-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
 }
 
 .nenomon-sprite {
@@ -57,11 +132,12 @@
   width: 100%;
   height: 100%;
   image-rendering: pixelated;
-  object-fit: contain; /* Cambié de 'cover' a 'contain' para PNG */
+  object-fit: contain;
 }
 
 .nenomon-info {
   flex: 1;
+  min-width: 0;           /* Permite que el texto se recorte */
 }
 
 .nenomon-info h4 {
@@ -70,6 +146,9 @@
   font-size: 10px;
   font-weight: bold;
   text-shadow: 1px 1px 0 #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .type-badges {
@@ -98,6 +177,36 @@
 .type-badge.veneno {
   background: #8a2be2;
   box-shadow: inset 2px 2px 0 #4b0082;
+}
+
+.type-badge.fuego {
+  background: #db1a1a;
+  box-shadow: inset 2px 2px 0 #820000;
+}
+
+.type-badge.agua {
+  background: #0084ff;
+  box-shadow: inset 2px 2px 0 #102ba5;
+}
+
+.type-badge.acero {
+  background: #8b8b8b;
+  box-shadow: inset 2px 2px 0 #4e4e4e;
+}
+
+.type-badge.hada {
+  background: #ff80e3;
+  box-shadow: inset 2px 2px 0 #bb3ea6;
+}
+
+.type-badge.volador {
+  background: #a9fcff;
+  box-shadow: inset 2px 2px 0 #549789;
+}
+
+.type-badge.siniestro {
+  background: #3f3636;
+  box-shadow: inset 2px 2px 0 #1b1717;
 }
  .nenomon-card.selected {
   border: 3px solid yellow;

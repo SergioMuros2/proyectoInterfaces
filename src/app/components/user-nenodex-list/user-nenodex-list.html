@@ -1,39 +1,55 @@
 <div class="user-nenomons-list">
-  <h3>Mis Nenomons</h3>
+  <h3>MIS NENOMONS</h3>
 
+  <!-- Controles de navegación -->
   <div class="controls" *ngIf="userNenomons.length > 0">
-    <button (click)="subir()">↑ Subir</button>
-    <button (click)="bajar()">↓ Bajar</button>
+    <button (click)="subir()">⬆ Subir</button>
+    <button (click)="bajar()">⬇ Bajar</button>
   </div>
 
   <div class="user-nenomon-grid">
     <div class="empty-message" *ngIf="userNenomons.length === 0">
-      <p>No tienes Nenomons aún</p>
-      <p>¡Añade algunos de la lista disponible!</p>
+      <p>NO TIENES NENOMONS AÚN</p>
+      <p>¡AÑADE ALGUNOS DE LA LISTA DISPONIBLE!</p>
     </div>
 
-    <div 
-      class="user-nenomon-card" 
-      *ngFor="let nenomon of userNenomons; let i = index"
-      [class.selected]="i === selectedIndex">
-      
+    <div class="user-nenomon-card"
+         *ngFor="let nenomon of userNenomons; let i = index"
+         [class.selected]="i === selectedIndex">
+
       <div class="user-nenomon-sprite">
-        <img [src]="'assets/images/' + nenomon.sprite" [alt]="nenomon.name" />
+        <img [src]="'assets/images/' + nenomon.sprite"
+             [alt]="nenomon.name"
+             class="pixel-sprite">
       </div>
-      
+
       <div class="user-nenomon-details">
         <h4>{{ nenomon.name }}</h4>
-        <span class="type-badge {{ nenomon.type.toLowerCase() }}">
-          {{ nenomon.type }}
-        </span>
+
+        <!-- CAMBIO AQUÍ: usa getTypeClass() -->
+        <div class="type-badges">
+          <span *ngIf="!nenomon.type.includes('/')"
+                class="type-badge {{ getTypeClass(nenomon.type) }}">
+            {{ nenomon.type }}
+          </span>
+
+          <ng-container *ngIf="nenomon.type.includes('/')">
+            <span class="type-badge {{ getTypeClass(nenomon.type.split('/')[0]) }}">
+              {{ nenomon.type.split('/')[0] }}
+            </span>
+            <span class="type-badge {{ getTypeClass(nenomon.type.split('/')[1]) }}">
+              {{ nenomon.type.split('/')[1] }}
+            </span>
+          </ng-container>
+        </div>
 
         <div class="user-nenomon-stats">
-          <div class="stat">Nivel: {{ nenomon.level || 1 }}</div>
+          <div class="stat">NIV: {{ nenomon.level || 1 }}</div>
           <div class="stat">HP: {{ nenomon.hp || 100 }}</div>
         </div>
 
-        <div class="attacks">
-          <span class="attack" *ngFor="let attack of nenomon.attacks || ['Ataque Básico']">
+        <div class="attacks" *ngIf="nenomon.attacks">
+          <span class="attack" *ngFor="let attack of nenomon.attacks">
             {{ attack }}
           </span>
         </div>

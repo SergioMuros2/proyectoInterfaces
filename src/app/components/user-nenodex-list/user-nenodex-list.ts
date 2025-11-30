@@ -12,7 +12,19 @@ import { NenomonsService } from '../../services/nenomons.service';
 export class UserNenodexList implements OnInit {
   userNenomons: any[] = [];
   selectedIndex = 0; // ← por defecto el primero
-
+  getTypeClass(type: string): string {
+    const typeMap: { [key: string]: string } = {
+      'Planta': 'planta',
+      'Veneno': 'veneno',
+      'Fuego': 'fuego',
+      'Siniestro': 'siniestro',
+      'Acero': 'acero',
+      'Agua': 'agua',
+      'Volador': 'volador',
+      'Hada': 'hada'
+    };
+    return typeMap[type] || 'normal';
+  }
   constructor(private nenomonsService: NenomonsService) {}
 
   ngOnInit() {
@@ -22,18 +34,31 @@ export class UserNenodexList implements OnInit {
       if (this.userNenomons.length && this.selectedIndex >= this.userNenomons.length) {
         this.selectedIndex = this.userNenomons.length - 1;
       }
+      // Actualizar la selección en el servicio
+      this.updateServiceSelection();
     });
   }
 
   subir() {
     if (this.selectedIndex > 0) {
       this.selectedIndex--;
+      this.updateServiceSelection();
     }
   }
 
   bajar() {
     if (this.selectedIndex < this.userNenomons.length - 1) {
       this.selectedIndex++;
+      this.updateServiceSelection();
+    }
+  }
+
+  // Nueva función para mantener sincronizada la selección
+  private updateServiceSelection() {
+    if (this.userNenomons.length > 0 && this.selectedIndex >= 0) {
+      this.nenomonsService.setSelectedUserNenomon(this.userNenomons[this.selectedIndex]);
+    } else {
+      this.nenomonsService.setSelectedUserNenomon(null);
     }
   }
 
@@ -41,4 +66,3 @@ export class UserNenodexList implements OnInit {
     return this.userNenomons[this.selectedIndex];
   }
 }
-

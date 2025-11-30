@@ -1,12 +1,14 @@
 <div class="nenodex-list">
   <h3>NENOMONS DISPONIBLES</h3>
 
-  <div class="controls">
+  <!-- CONTROLES FIJOS -->
+  <div class="controls-container">
     <button (click)="subir()">⬆ Subir</button>
     <button (click)="bajar()">⬇ Bajar</button>
   </div>
 
-  <div class="nenomon-grid">
+  <!-- SOLO LAS TARJETAS TIENEN SCROLL -->
+  <div class="nenomon-grid" #nenomonGrid>
     <div
       class="nenomon-card"
       *ngFor="let nenomon of nenomons; let i = index"
@@ -23,15 +25,15 @@
 
         <div class="type-badges">
           <span *ngIf="!nenomon.type.includes('/')"
-                class="type-badge planta">
+                class="type-badge {{ getTypeClass(nenomon.type) }}">
             {{ nenomon.type }}
           </span>
 
           <ng-container *ngIf="nenomon.type.includes('/')">
-            <span class="type-badge planta">
+            <span class="type-badge {{ getTypeClass(nenomon.type.split('/')[0]) }}">
               {{ nenomon.type.split('/')[0] }}
             </span>
-            <span class="type-badge veneno">
+            <span class="type-badge {{ getTypeClass(nenomon.type.split('/')[1]) }}">
               {{ nenomon.type.split('/')[1] }}
             </span>
           </ng-container>

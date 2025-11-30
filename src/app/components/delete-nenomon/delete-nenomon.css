@@ -1,16 +1,16 @@
-.add-button {
-  background: #2ecc71;
+.delete-button {
+  background: #e74c3c;
   color: white;
   border: 3px solid #000;
   border-radius: 0;
   padding: 12px 20px;
   font-family: 'Press Start 2P', cursive;
-  font-size: 12px; /* Mismo tamaño */
+  font-size: 12px; /* Más grande */
   cursor: pointer;
   transition: all 0.2s ease;
   image-rendering: pixelated;
-  min-width: 200px; /* Mismo ancho */
-  height: 50px; /* Misma altura */
+  min-width: 200px; /* Ancho mínimo */
+  height: 50px; /* Altura fija */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,13 +18,13 @@
   line-height: 1.2;
 }
 
-.add-button:hover {
-  background: #27ae60;
+.delete-button:hover {
+  background: #c0392b;
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0 #000;
 }
 
-.add-button:active {
+.delete-button:active {
   transform: translate(0, 0);
   box-shadow: none;
 }

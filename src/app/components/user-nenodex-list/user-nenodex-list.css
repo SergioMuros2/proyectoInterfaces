@@ -165,16 +165,6 @@
   margin-bottom: 6px;
 }
 
-.type-badge.fuego {
-  background: #ff4500;
-  box-shadow: inset 2px 2px 0 #ff0000;
-}
-
-.type-badge.agua {
-  background: #1e90ff;
-  box-shadow: inset 2px 2px 0 #0000ff;
-}
-
 .type-badge.planta {
   background: #32cd32;
   box-shadow: inset 2px 2px 0 #008000;
@@ -183,6 +173,36 @@
 .type-badge.veneno {
   background: #8a2be2;
   box-shadow: inset 2px 2px 0 #4b0082;
+}
+
+.type-badge.fuego {
+  background: #db1a1a;
+  box-shadow: inset 2px 2px 0 #820000;
+}
+
+.type-badge.agua {
+  background: #0084ff;
+  box-shadow: inset 2px 2px 0 #102ba5;
+}
+
+.type-badge.acero {
+  background: #8b8b8b;
+  box-shadow: inset 2px 2px 0 #4e4e4e;
+}
+
+.type-badge.hada {
+  background: #ff80e3;
+  box-shadow: inset 2px 2px 0 #bb3ea6;
+}
+
+.type-badge.volador {
+  background: #a9fcff;
+  box-shadow: inset 2px 2px 0 #549789;
+}
+
+.type-badge.siniestro {
+  background: #3f3636;
+  box-shadow: inset 2px 2px 0 #1b1717;
 }
 
 /* ==========================

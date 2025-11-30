@@ -1,0 +1,74 @@
+<!-- Botón para abrir detalles -->
+<button class="details-button" (click)="openDetails()">
+  	🔍 Ver Detalles
+</button>
+
+<!-- Modal/ventana de detalles -->
+<div class="modal-overlay" *ngIf="isVisible" (click)="closeDetails()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- Cabecera del modal -->
+    <div class="modal-header">
+      <h2>DETALLES DE {{ currentNenomon?.name?.toUpperCase() }}</h2>
+      <button class="close-button" (click)="closeDetails()">✕</button>
+    </div>
+
+    <!-- Contenido del modal -->
+    <div class="modal-body" *ngIf="currentNenomon">
+
+      <!-- Imagen grande -->
+      <div class="detail-sprite">
+        <img [src]="'assets/images/' + currentNenomon.sprite"
+             [alt]="currentNenomon.name"
+             class="detail-image">
+      </div>
+
+      <!-- Información -->
+      <div class="detail-info">
+
+        <!-- Tipo -->
+        <div class="detail-section">
+          <h3>TIPO</h3>
+          <div class="type-badges">
+            <span *ngIf="!currentNenomon.type.includes('/')"
+                  class="type-badge planta large">
+              {{ currentNenomon.type }}
+            </span>
+
+            <ng-container *ngIf="currentNenomon.type.includes('/')">
+              <span class="type-badge planta large">
+                {{ currentNenomon.type.split('/')[0] }}
+              </span>
+              <span class="type-badge veneno large">
+                {{ currentNenomon.type.split('/')[1] }}
+              </span>
+            </ng-container>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="detail-section">
+          <h3>DESCRIPCIÓN</h3>
+          <p class="description">{{ getDescription(currentNenomon.name) }}</p>
+        </div>
+
+        <!-- Stats (si existen) -->
+        <div class="detail-section" *ngIf="currentNenomon.level || currentNenomon.hp">
+          <h3>ESTADÍSTICAS</h3>
+          <div class="stats-grid">
+            <div class="stat-item" *ngIf="currentNenomon.level">
+              <span class="stat-label">Nivel:</span>
+              <span class="stat-value">{{ currentNenomon.level }}</span>
+            </div>
+            <div class="stat-item" *ngIf="currentNenomon.hp">
+              <span class="stat-label">HP:</span>
+              <span class="stat-value">{{ currentNenomon.hp }}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
