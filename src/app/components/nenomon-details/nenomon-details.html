@@ -1,6 +1,8 @@
 <!-- Botón para abrir detalles -->
 <button class="details-button" (click)="openDetails()">
-  	🔍 Ver Detalles
+  <div class="button-content">
+    <span class="button-text">🔍 Ver Detalles</span>
+  </div>
 </button>
 
 <!-- Modal/ventana de detalles -->
@@ -29,17 +31,17 @@
         <!-- Tipo -->
         <div class="detail-section">
           <h3>TIPO</h3>
-          <div class="type-badges">
+          <div class="detail-types type-badges">
             <span *ngIf="!currentNenomon.type.includes('/')"
-                  class="type-badge planta large">
+                  [class]="'type-badge large ' + currentNenomon.type.toLowerCase()">
               {{ currentNenomon.type }}
             </span>
 
             <ng-container *ngIf="currentNenomon.type.includes('/')">
-              <span class="type-badge planta large">
+              <span [class]="'type-badge large ' + currentNenomon.type.split('/')[0].toLowerCase()">
                 {{ currentNenomon.type.split('/')[0] }}
               </span>
-              <span class="type-badge veneno large">
+              <span [class]="'type-badge large ' + currentNenomon.type.split('/')[1].toLowerCase()">
                 {{ currentNenomon.type.split('/')[1] }}
               </span>
             </ng-container>
@@ -57,11 +59,11 @@
           <h3>ESTADÍSTICAS</h3>
           <div class="stats-grid">
             <div class="stat-item" *ngIf="currentNenomon.level">
-              <span class="stat-label">Nivel:</span>
+              <span class="stat-label">Nivel</span>
               <span class="stat-value">{{ currentNenomon.level }}</span>
             </div>
             <div class="stat-item" *ngIf="currentNenomon.hp">
-              <span class="stat-label">HP:</span>
+              <span class="stat-label">HP</span>
               <span class="stat-value">{{ currentNenomon.hp }}</span>
             </div>
           </div>

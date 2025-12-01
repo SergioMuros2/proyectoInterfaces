@@ -77,7 +77,6 @@
   -webkit-box-orient: vertical;
 }
 
-
 /* Estilos para botones en fila horizontal */
 .button-row {
   display: flex;
@@ -176,6 +175,18 @@
   height: 30px;
   cursor: pointer;
   font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background: #c0392b;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.close-button:active {
+  transform: translate(0, 0);
+  box-shadow: none;
 }
 
 /* Cuerpo del modal */
@@ -212,13 +223,130 @@
   margin: 0 0 10px 0;
   border-bottom: 2px solid #000;
   padding-bottom: 5px;
+  text-transform: uppercase;
 }
 
-/* Tipos grandes */
+/* TIPOS en el modal de detalles - IGUAL que en la lista */
 .type-badge.large {
-  padding: 8px 15px;
-  font-size: 10px;
-  margin-right: 8px;
+  padding: 3px 6px; /* Mismo que en la lista */
+  border-radius: 0;
+  font-size: 7px; /* Mismo que en la lista */
+  font-weight: bold;
+  color: white !important; /* Blanco como en la lista */
+  display: inline-block;
+  border: 1px solid #000; /* Mismo que en la lista */
+  text-shadow: 1px 1px 0 #000; /* Mismo que en la lista */
+  white-space: nowrap;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  image-rendering: pixelated;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Colores específicos para cada tipo - IGUAL que en la lista */
+.type-badge.large.planta {
+  background: #32cd32 !important;
+  box-shadow: inset 2px 2px 0 #008000 !important;
+}
+
+.type-badge.large.veneno {
+  background: #8a2be2 !important;
+  box-shadow: inset 2px 2px 0 #4b0082 !important;
+}
+
+.type-badge.large.fuego {
+  background: #db1a1a !important;
+  box-shadow: inset 2px 2px 0 #820000 !important;
+}
+
+.type-badge.large.agua {
+  background: #0084ff !important;
+  box-shadow: inset 2px 2px 0 #102ba5 !important;
+}
+
+.type-badge.large.acero {
+  background: #8b8b8b !important;
+  box-shadow: inset 2px 2px 0 #4e4e4e !important;
+}
+
+.type-badge.large.hada {
+  background: #ff80e3 !important;
+  box-shadow: inset 2px 2px 0 #bb3ea6 !important;
+}
+
+.type-badge.large.volador {
+  background: #a9fcff !important;
+  box-shadow: inset 2px 2px 0 #549789 !important;
+}
+
+.type-badge.large.siniestro {
+  background: #3f3636 !important;
+  box-shadow: inset 2px 2px 0 #1b1717 !important;
+}
+
+/* Para tipos adicionales que puedas tener */
+.type-badge.large.electric,
+.type-badge.large.electrico {
+  background: #F8D030 !important;
+  box-shadow: inset 2px 2px 0 #b39700 !important;
+  color: #000 !important; /* Texto negro para mejor contraste */
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+.type-badge.large.normal {
+  background: #A8A878 !important;
+  box-shadow: inset 2px 2px 0 #6d6d4e !important;
+}
+
+.type-badge.large.fighting,
+.type-badge.large.lucha {
+  background: #C03028 !important;
+  box-shadow: inset 2px 2px 0 #7d1f1a !important;
+}
+
+.type-badge.large.ground,
+.type-badge.large.tierra {
+  background: #E0C068 !important;
+  box-shadow: inset 2px 2px 0 #927d44 !important;
+  color: #000 !important; /* Texto negro para mejor contraste */
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+.type-badge.large.psychic,
+.type-badge.large.psiquico {
+  background: #F85888 !important;
+  box-shadow: inset 2px 2px 0 #c44569 !important;
+}
+
+.type-badge.large.rock,
+.type-badge.large.roca {
+  background: #B8A038 !important;
+  box-shadow: inset 2px 2px 0 #7a6b25 !important;
+}
+
+.type-badge.large.ghost,
+.type-badge.large.fantasma {
+  background: #705898 !important;
+  box-shadow: inset 2px 2px 0 #483a6a !important;
+}
+
+.type-badge.large.dragon {
+  background: #7038F8 !important;
+  box-shadow: inset 2px 2px 0 #4c26b0 !important;
+}
+
+/* Contenedor para los tipos en el modal */
+.detail-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.type-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 /* Descripción */
@@ -247,6 +375,7 @@
 .stat-label {
   font-size: 8px;
   display: block;
+  text-transform: uppercase;
 }
 
 .stat-value {
