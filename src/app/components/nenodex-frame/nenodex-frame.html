@@ -1,41 +1,45 @@
 <div class="nenodex-container">
-  <!-- Cabecera de la Nenodex -->
+
+  <!-- Encabezado del dispositivo -->
   <div class="nenodex-header">
     <h1 class="nenodex-title">NENODEX</h1>
-    <div class="nenodex-lights">
-      <div class="light red"></div>
-      <div class="light yellow"></div>
-      <div class="light green"></div>
+
+    <div class="nenodex-indicators">
+      <span class="indicator"></span>
+      <span class="indicator"></span>
+      <span class="indicator"></span>
     </div>
   </div>
 
-  <!-- Área principal - Solo slots para otros componentes -->
+  <!-- Cuerpo principal -->
   <div class="nenodex-body">
-    <!-- Slot para la pantalla principal -->
-    <div class="screen-section">
-      <div class="main-screen">
-        <div class="screen-border">
-          <div class="screen-content">
-            <ng-content select="[main-screen]"></ng-content>
-          </div>
+
+    <!-- Sección de pantalla principal -->
+    <section class="display-section">
+      <div class="display-frame">
+        <div class="display-content">
+          <ng-content select="[main-screen]"></ng-content>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Slot para la lista -->
-    <div class="list-section">
-  <div class="list-container">
-    <ng-content select="[list-section]"></ng-content>
-  </div>
-</div>
+    <!-- Sección de lista -->
+    <section class="list-section">
+      <div class="list-frame">
+        <ng-content select="[list-section]"></ng-content>
+      </div>
+    </section>
 
-  <!-- Slot para controles (será otro componente) -->
-  <div class="controls-section">
-    <ng-content select="[controls-section]"></ng-content>
+    <!-- Sección de controles -->
+    <section class="controls-section">
+      <ng-content select="[controls-section]"></ng-content>
+    </section>
+
   </div>
 
-  <!-- Pie de la Nenodex -->
-  <div class="nenodex-footer">
-    <div class="brand">DIGITAL MONSTER DEVICE</div>
-  </div>
+  <!-- Pie del dispositivo -->
+  <footer class="nenodex-footer">
+    <span class="device-brand">DIGITAL MONSTER DEVICE</span>
+  </footer>
+
 </div>

@@ -1,85 +1,146 @@
+/* ============================
+   ESTILO GENERAL DEL DISPOSITIVO
+   ============================ */
 .nenodex-container {
-  width: 1000px;
-  height: 750px;
-  background: #e97c8e;
-  border: 8px solid #5e0422;
-  border-radius: 0;
-  box-shadow:
-    0 0 0 4px #000,
-    inset 0 0 0 4px #cf2222;
-  padding: 20px;
-  font-family: 'Press Start 2P', cursive, monospace;
-  position: relative;
+  width: 420px;
+  background: #171b1f;
+  border: 2px solid #2a2f35;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0, 255, 180, 0.15);
+  font-family: "Orbitron", sans-serif;
+  color: #e4e8ec;
   display: flex;
   flex-direction: column;
-  image-rendering: pixelated;
-  overflow: hidden; /* ← EVITA QUE TODO SE SALGA */
+  gap: 15px;
 }
 
-/* ... resto del header igual ... */
+/* ============================
+   CABECERA
+   ============================ */
+.nenodex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* Cuerpo principal - CORREGIDO */
+.nenodex-title {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #00ffc8;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 200, 0.6);
+}
+
+.nenodex-indicators {
+  display: flex;
+  gap: 6px;
+}
+
+.nenodex-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  background: #253036;
+  border-radius: 50%;
+  box-shadow: inset 0 0 6px rgba(0, 255, 200, 0.2);
+}
+
+/* ============================
+   CUERPO PRINCIPAL
+   ============================ */
 .nenodex-body {
   display: flex;
-  gap: 20px;
-  height: 500px;
-  margin-bottom: 20px;
-  flex: 1;
-  min-height: 0; /* ← IMPORTANTE */
-}
-
-/* Lista disponibles - CORREGIDO */
-.list-section {
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  min-height: 0; /* ← IMPORTANTE */
+  gap: 18px;
 }
 
-.list-container {
-  background: #2f4f4f;
-  border: 4px solid #000;
-  border-radius: 0;
-  padding: 8px;
-  height: 100%; /* ← OCUPA TODA LA ALTURA DISPONIBLE */
-  box-shadow: inset 0 0 0 2px #4682b4;
+/* ============================
+   SECCIÓN DE PANTALLA
+   ============================ */
+.display-section {
+  width: 100%;
+}
+
+/* Marco azul de la pantalla principal */
+.display-frame {
+  background: linear-gradient(145deg, #0f1316, #1b1f24);
+  border: 2px solid #00ffc8;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow:
+    0 0 10px rgba(0, 255, 200, 0.2),
+    inset 0 0 10px rgba(0, 255, 200, 0.15);
+
   display: flex;
-  flex-direction: column;
-  min-height: 0; /* ← CRÍTICO */
-  overflow: hidden; /* ← EVITA DESBORDAMIENTO */
+  justify-content: center; /* centra el contenido verticalmente si es más pequeño */
+  align-items: flex-start; /* alinea el contenido al principio y deja crecer */
+  width: 100%;
+  min-height: 180px; /* altura mínima para que se vea bien cuando esté vacío */
 }
 
-/* Pantalla principal - TAMBIÉN CORREGIDO */
-.main-screen-section {
-  flex: 3;
+/* Cuadrado interno dentro del marco */
+.display-content {
+  width: 100%;
+  background: #0c0e10;
+  border: 1px solid #262b30;
+  border-radius: 6px;
+  padding: 10px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  min-height: 0; /* ← IMPORTANTE */
+  flex-direction: column; /* útil si hay varios elementos dentro */
+  
+  /* Ajuste automático de altura según contenido */
+  height: auto;
+  min-height: 150px; /* altura mínima para que no se vea demasiado pequeño */
 }
 
-.screen-border {
-  background: #000;
-  border: 6px solid #444;
-  border-radius: 0;
-  padding: 4px;
-  height: 100%;
-  box-shadow: inset 0 0 0 4px #222;
+
+
+/* ============================
+   SECCIÓN DE LISTA
+   ============================ */
+.list-section .list-frame {
+  background: #0f1113;
+  border: 1px solid #232a30;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 140px;
+  box-shadow: inset 0 0 8px rgba(0, 255, 150, 0.08);
+}
+
+/* ============================
+   SECCIÓN DE CONTROLES
+   ============================ */
+.controls-section {
   display: flex;
-  flex-direction: column;
-  min-height: 0; /* ← IMPORTANTE */
+  justify-content: center;
+  padding-top: 8px;
 }
 
-.screen-content {
-  background: #8fbc8f;
-  border: 2px solid #556b2f;
-  border-radius: 0;
-  height: 100%;
-  padding: 15px;
-  image-rendering: pixelated;
+/* ============================
+   PIE DEL DISPOSITIVO
+   ============================ */
+.nenodex-footer {
+  text-align: center;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.device-brand {
+  letter-spacing: 1px;
+}
+/* Centrar la Nenodex en la pantalla */
+body {
   display: flex;
-  flex-direction: column;
-  min-height: 0; /* ← IMPORTANTE */
-  overflow: hidden; /* ← EVITA DESBORDAMIENTO */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #0d0f11; /* Opcional, queda muy bien */
 }
 
-/* ... resto igual ... */
+/* Para evitar que el contenedor se pegue a los bordes en pantallas pequeñas */
+.nenodex-container {
+  margin: auto;
+}
