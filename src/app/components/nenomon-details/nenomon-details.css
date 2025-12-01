@@ -1,31 +1,126 @@
-/* Botón de detalles */
+/* Botón de detalles - Versión pixel art circular */
 .details-button {
   background: #3498db;
   color: white;
-  border: 3px solid #000;
-  border-radius: 0;
-  padding: 12px 20px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  padding: 0;
   font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
+  font-size: 11px; /* Reducido ligeramente para que quepa mejor */
   cursor: pointer;
   transition: all 0.2s ease;
   image-rendering: pixelated;
-  min-width: 200px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.2; /* Reducido para más líneas */
+  box-sizing: border-box;
+  /* Pixel art effect con múltiples bordes */
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 6px #3498db,
+    0 0 0 8px #000;
+  /* MÁS separación entre botones */
+  margin: 15px; /* Aumentado de 10px a 15px */
+  /* Para manejar texto largo */
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word; /* Añadido para dividir palabras largas */
 }
 
 .details-button:hover {
   background: #2980b9;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px, -4px);
+  box-shadow:
+    6px 6px 0 #000,
+    0 0 0 2px #000,
+    0 0 0 6px #2980b9,
+    0 0 0 8px #000;
 }
 
-/* Modal */
+.details-button:active {
+  transform: translate(0, 0);
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 6px #2980b9,
+    0 0 0 8px #000;
+}
+
+/* Contenedor interno para el texto */
+.details-button .button-content {
+  padding: 10px; /* Aumentado de 8px a 10px */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.details-button .button-text {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2; /* Coincide con el line-height del botón */
+  padding: 3px;
+  box-sizing: border-box;
+  /* Permite múltiples líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Máximo 3 líneas */
+  -webkit-box-orient: vertical;
+}
+
+/* Estilos para botones en fila horizontal */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Aumentado de 20px a 30px */
+  margin: 25px 0; /* Aumentado de 20px a 25px */
+  padding: 10px;
+}
+
+/* Estilos para botones en columna vertical */
+.button-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* Aumentado de 20px a 30px */
+  margin: 25px 0; /* Aumentado de 20px a 25px */
+  padding: 10px;
+}
+
+/* Clase para MÁXIMA separación */
+.button-row.extra-spaced {
+  gap: 40px !important;
+  margin: 30px 0 !important;
+}
+
+.button-column.extra-spaced {
+  gap: 40px !important;
+  margin: 30px 0 !important;
+}
+
+/* Clase para separación personalizada */
+.button-row.custom-spacing {
+  gap: var(--custom-gap, 30px);
+  margin: var(--custom-margin, 25px 0);
+}
+
+.button-column.custom-spacing {
+  gap: var(--custom-gap, 30px);
+  margin: var(--custom-margin, 25px 0);
+}
+
+/* Modal (mantenemos estos estilos igual) */
 .modal-overlay {
   position: fixed;
   top: 0;

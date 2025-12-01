@@ -1,31 +1,73 @@
+/* Botón de eliminar - Versión pixel art circular */
 .delete-button {
   background: #e74c3c;
   color: white;
-  border: 5px solid #000; /* Aumentamos el grosor del borde para hacerlo más notorio */
-  border-radius: 50%; /* Mantenerlo circular */
-  padding: 30px; /* Aumentamos el padding para que el botón sea más grande */
+  border: 4px solid #000;
+  border-radius: 50%;
+  padding: 0;
   font-family: 'Press Start 2P', cursive;
-  font-size: 30px; /* Hacemos la fuente más grande */
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
-  image-rendering: pixelated; /* Mantener estilo pixel art */
-  min-width: 100px; /* Tamaño mínimo mayor para asegurar que sea grande */
-  height: 100px; /* Hacemos el botón aún más grande y circular */
+  image-rendering: pixelated;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.2;
-  box-sizing: border-box; /* Asegurarse de que el padding no afecte el tamaño */
+  line-height: 1.3;
+  box-sizing: border-box;
+  position: relative;
+  /* Pixel art effect con múltiples bordes */
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 6px #e74c3c,
+    0 0 0 8px #000;
+  /* MÁS separación entre botones */
+  margin: 15px; /* Aumentado de 10px a 15px */
+  /* Para manejar texto largo */
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .delete-button:hover {
   background: #c0392b;
-  transform: translate(-4px, -4px); /* Aumentamos el desplazamiento para hacerlo más notorio */
-  box-shadow: 6px 6px 0 #000; /* Hacemos la sombra más grande */
+  transform: translate(-4px, -4px);
+  box-shadow:
+    6px 6px 0 #000,
+    0 0 0 2px #000,
+    0 0 0 6px #c0392b,
+    0 0 0 8px #000;
 }
 
 .delete-button:active {
   transform: translate(0, 0);
-  box-shadow: none;
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 6px #c0392b,
+    0 0 0 8px #000;
+}
+
+/* Contenedor interno para el texto */
+.delete-button .button-content {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.delete-button .button-text {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  padding: 5px;
+  box-sizing: border-box;
 }

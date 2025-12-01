@@ -1,21 +1,23 @@
+<!-- Música de fondo estática (se reproduce automáticamente) -->
+<audio #backgroundMusic loop autoplay style="display: none;">
+  <source src="assets/music/background.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
 <main class="main">
-
   <app-nenodex-frame>
-
     <div main-screen>
       <app-user-nenodex-list></app-user-nenodex-list>
     </div>
 
     <div controls-section>
-        <app-add-nenomon></app-add-nenomon>
-        <app-delete-nenomon></app-delete-nenomon>
-        <app-nenomon-details></app-nenomon-details>
+      <app-add-nenomon></app-add-nenomon>
+      <app-delete-nenomon></app-delete-nenomon>
+      <app-nenomon-details></app-nenomon-details>
     </div>
 
     <div list-section>
       <app-nenodex-list></app-nenodex-list>
     </div>
-
   </app-nenodex-frame>
-
 </main>
