@@ -1,3 +1,9 @@
+/**
+ * Componente que te muestra la lista principal de nenomons
+ * Permitiendote moverte abajo y arriba para seleccionar
+ * @author Andrei, Jorge y Sergio
+ * @version 1.0
+ */
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NenomonsService } from '../../services/nenomons.service';

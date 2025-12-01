@@ -1,3 +1,9 @@
+/**
+ * Componente que muestra la lista del usuario y 
+ * permite moverse arriba y abajo para cambiar el seleccionado
+ * @author Andrei, Jorge y Sergio
+ * @version 1.0
+ */
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NenomonsService } from '../../services/nenomons.service';

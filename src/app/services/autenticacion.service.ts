@@ -1,4 +1,3 @@
-// src/app/services/autenticacion.service.ts
 import { Injectable } from '@angular/core';
 import { Usuario } from '../models/usuario.model';
 // @Injectable:

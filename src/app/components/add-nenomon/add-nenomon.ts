@@ -1,3 +1,9 @@
+/**
+ * Componente para añadir nenomons a la lista del usuario a traves de un boton
+ * Añadira el nenomon seleccionado de la lista principal
+ * @author Andrei, Jorge y Sergio
+ * @version 1.0
+ */
 import { Component } from '@angular/core';
 import { NenomonsService } from '../../services/nenomons.service';
 import { CommonModule } from '@angular/common';

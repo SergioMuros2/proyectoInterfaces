@@ -1,3 +1,8 @@
+/**
+ * Componente que te muestra los detalles de cada pokemon, a traves de un boton
+ * @author Andrei, Jorge y Sergio
+ * @version 1.0
+ */
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NenomonsService } from '../../services/nenomons.service';

@@ -1,3 +1,8 @@
+/**
+ * Componente para iniciar sesion 
+ * @author Andrei, Jorge y Sergio
+ * @version 1.0
+ */
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AutenticacionService } from '../../services/autenticacion.service';

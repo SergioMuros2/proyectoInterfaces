@@ -1,3 +1,7 @@
+/**
+ * Componente que contiene la nenodex, a la que se accedera tras iniciar sesion
+ * @author Andrei, Jorge y Sergio
+ */
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NenodexFrame } from '../../nenodex-frame/nenodex-frame';
 import { NenodexList } from '../../nenodex-list/nenodex-list';
