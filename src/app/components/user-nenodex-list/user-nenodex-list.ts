@@ -11,7 +11,8 @@ import { NenomonsService } from '../../services/nenomons.service';
 })
 export class UserNenodexList implements OnInit {
   userNenomons: any[] = [];
-  selectedIndex = 0; // ← por defecto el primero
+  selectedIndex = 0;
+
   getTypeClass(type: string): string {
     const typeMap: { [key: string]: string } = {
       'Planta': 'planta',
@@ -25,16 +26,15 @@ export class UserNenodexList implements OnInit {
     };
     return typeMap[type] || 'normal';
   }
+
   constructor(private nenomonsService: NenomonsService) {}
 
   ngOnInit() {
     this.nenomonsService.userList$.subscribe(lista => {
       this.userNenomons = lista;
-      // Aseguramos que el seleccionado siempre sea válido
       if (this.userNenomons.length && this.selectedIndex >= this.userNenomons.length) {
         this.selectedIndex = this.userNenomons.length - 1;
       }
-      // Actualizar la selección en el servicio
       this.updateServiceSelection();
     });
   }
@@ -53,13 +53,19 @@ export class UserNenodexList implements OnInit {
     }
   }
 
-  // Nueva función para mantener sincronizada la selección
+  // Actualiza la selección en el servicio
   private updateServiceSelection() {
     if (this.userNenomons.length > 0 && this.selectedIndex >= 0) {
       this.nenomonsService.setSelectedUserNenomon(this.userNenomons[this.selectedIndex]);
     } else {
       this.nenomonsService.setSelectedUserNenomon(null);
     }
+  }
+
+  // Nueva función para eliminar un nenomon de la lista
+  deleteNenomon(nenomon: any) {
+    this.nenomonsService.removeFromUserNenodex(nenomon.id);
+    alert(nenomon.name + " eliminado de tu lista!");
   }
 
   get selectedNenomon() {

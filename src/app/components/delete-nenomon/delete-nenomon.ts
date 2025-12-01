@@ -14,7 +14,7 @@ export class DeleteNenomonComponent {
   constructor(private nenomonsService: NenomonsService) {}
 
   deleteNenomon() {
-    const selected = this.nenomonsService.getSelected();
+    const selected = this.nenomonsService.getSelectedUserNenomon();
 
     if (!selected) {
       alert("No hay un nenomon seleccionado");

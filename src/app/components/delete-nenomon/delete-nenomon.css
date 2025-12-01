@@ -1,27 +1,28 @@
 .delete-button {
   background: #e74c3c;
   color: white;
-  border: 3px solid #000;
-  border-radius: 0;
-  padding: 12px 20px;
+  border: 5px solid #000; /* Aumentamos el grosor del borde para hacerlo más notorio */
+  border-radius: 50%; /* Mantenerlo circular */
+  padding: 30px; /* Aumentamos el padding para que el botón sea más grande */
   font-family: 'Press Start 2P', cursive;
-  font-size: 12px; /* Más grande */
+  font-size: 30px; /* Hacemos la fuente más grande */
   cursor: pointer;
   transition: all 0.2s ease;
-  image-rendering: pixelated;
-  min-width: 200px; /* Ancho mínimo */
-  height: 50px; /* Altura fija */
+  image-rendering: pixelated; /* Mantener estilo pixel art */
+  min-width: 100px; /* Tamaño mínimo mayor para asegurar que sea grande */
+  height: 100px; /* Hacemos el botón aún más grande y circular */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   line-height: 1.2;
+  box-sizing: border-box; /* Asegurarse de que el padding no afecte el tamaño */
 }
 
 .delete-button:hover {
   background: #c0392b;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px, -4px); /* Aumentamos el desplazamiento para hacerlo más notorio */
+  box-shadow: 6px 6px 0 #000; /* Hacemos la sombra más grande */
 }
 
 .delete-button:active {
